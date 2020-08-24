@@ -9,8 +9,8 @@ class Pixel extends React.Component {
     this.state = {
       myStyle: {
         fontFamily: 'Times New Roman',
-        height: "35px",
-        width: "35px",
+        height: "100px",
+        width: "100px",
         backgroundColor: randomHexColor()
       }
     }
@@ -39,7 +39,7 @@ class Pixel extends React.Component {
 
   render() {
     return (
-      <div style={this.state.myStyle} onMouseEnter={this.clickHandler}>
+      <div style={this.state.myStyle} onClick={this.clickHandler}>
         {this.colorTime()}
       </div>
     )

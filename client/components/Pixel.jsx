@@ -22,8 +22,8 @@ class Pixel extends React.Component {
 
         this.state = {
             style: {
-                height: '5px',
-                width: '5px',
+                height: '50px',
+                width: '50px',
                 backgroundColor: randomHexColor()
             }
         }
@@ -40,8 +40,8 @@ class Pixel extends React.Component {
     clickHandler = evt => {
         this.setState({
             style: {
-                height: '5px',
-                width: '5px',
+                height: '50px',
+                width: '50px',
                 backgroundColor: randomHexColor()
 
             }
@@ -51,8 +51,8 @@ class Pixel extends React.Component {
     turnGreen = evt => {
         this.setState({
             style: {
-                height: '5px',
-                width: '5px',
+                height: '50px',
+                width: '50px',
                 backgroundColor: 'green'
             }
         })
@@ -62,8 +62,8 @@ class Pixel extends React.Component {
         evt.preventDefault()
         this.setState({
             style: {
-                height: '5px',
-                width: '5px',
+                height: '50px',
+                width: '50px',
                 backgroundColor: 'black'
             }
         })
@@ -72,8 +72,8 @@ class Pixel extends React.Component {
     turnWhite = evt => {
         this.setState({
             style: {
-                height: '5px',
-                width: '5px',
+                height: '50px',
+                width: '50px',
                 backgroundColor: 'white'
             }
         })
@@ -82,18 +82,28 @@ class Pixel extends React.Component {
     turnYellow = evt => {
         this.setState({
             style: {
-                height: '5px',
-                width: '5px',
+                height: '50px',
+                width: '50px',
                 backgroundColor: 'yellow'
             }
         })
     }
 
+    //change the colour of pixels on a timer every two seconds
+    //create a setInterval function to change every 2 seconds
+    //pass in this.state
+    //then every two seconds, the randomHexColour() is called
+
+    changeEveryTwoSeconds = () => {
+        this.intervalID = setInterval(this.randomHexColor(), 1000)
+
+    }
+
     render() {
         return (
-            <div style={this.state.style} 
-                onClick={this.clickHandler} 
-                onMouseEnter={this.turnGreen} 
+            <div style={this.state.style}
+                onClick={this.clickHandler}
+                onMouseEnter={this.turnGreen}
                 onContextMenu={this.turnBlack}
                 onDoubleClick={this.turnWhite}
                 onDragEnter={this.turnYellow}>

@@ -9,8 +9,8 @@ class Pixel extends React.Component {
     this.state = {
       myStyle: {
         fontFamily: 'Times New Roman',
-        height: "10px",
-        width: "10px",
+        height: "42px",
+        width: "42px",
         backgroundColor: randomHexColor()
       }
     }

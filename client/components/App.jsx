@@ -6,8 +6,8 @@ class App extends React.Component {
   render() {
     const pixels = []
 
-    for(let i = 0; i < 10000; i++){
-      pixels.push(<Pixel/>)
+    for (let i = 0; i < 420; i++) {
+      pixels.push(<Pixel />)
     }
 
     return (

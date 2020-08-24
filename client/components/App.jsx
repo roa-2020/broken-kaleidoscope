@@ -1,8 +1,9 @@
 import React from 'react'
+import Pixel from './Pixel'
 
 const App = () => {
   return (
-    <div>React development has begun!</div>
+    Array(646).fill(0).map((e, i) => { return <Pixel key={i} />})
   )
 }
 

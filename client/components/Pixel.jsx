@@ -15,25 +15,17 @@ class Pixel extends React.Component {
         color: props.color || randomHexColor(),
       },
     };
-    // this.clickHandler = this.clickHandler.bind(this);
-    // this.overHandler = this.overHandler.bind(this);
-    // this.contextHandler = this.contextHandler.bind(this);
-    // this.dblHandler = this.dblHandler.bind(this);
-    // this.dragHandler = this.dragHandler.bind(this);
-    
   }
 
   componentDidMount() {
-    // const thisChangeColor = this.changeColor.bind(this);
     setInterval(this.changeColor, 10000);
   }
-
 
   changeColor = () => {
     this.setState({
       style: { ...this.state.style, color: randomHexColor() },
     });
-  }
+  };
   clickHandler = (evt) => {
     this.setState({
       style: { ...this.state.style, color: randomHexColor() },

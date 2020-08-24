@@ -17,7 +17,7 @@ class Pixel extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
   }
 
-  clickHandler = evt => {
+  clickHandler = (evt) => {
     this.setState({
       myStyle: {
         ...this.state.myStyle,
@@ -26,10 +26,21 @@ class Pixel extends React.Component {
     })
   }
 
+  colorTime() {
+    setInterval(() => {
+      this.setState({
+        myStyle: {
+          ...this.state.myStyle,
+          backgroundColor: randomHexColor()
+        }
+      })
+    }, 2000)
+  }
+
   render() {
     return (
       <div style={this.state.myStyle} onMouseEnter={this.clickHandler}>
-
+        {this.colorTime()}
       </div>
     )
   }

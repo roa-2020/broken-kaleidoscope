@@ -6,7 +6,7 @@ class App extends React.Component {
   render() {
       return (
       <React.Fragment>
-        {Array(420).fill(<Pixel/>)}
+        {Array(486).fill(<Pixel/>)}
       </React.Fragment>
     )
   }

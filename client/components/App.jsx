@@ -1,9 +1,14 @@
 import React from 'react'
+import Pixel from './Pixel'
 
-const App = () => {
-  return (
-    <div>React development has begun!</div>
-  )
+class App extends React.Component {
+  render() {
+    return (
+      <div id="app">
+        {Array(350).fill(<Pixel/>)}
+      </div>
+    );
+  }
 }
 
 export default App

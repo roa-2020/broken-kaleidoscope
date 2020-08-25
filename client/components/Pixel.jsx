@@ -5,6 +5,21 @@ const randomHexColor = () =>
 
 class Pixel extends React.Component {     // Define as a class component rather than functional component. Allows us to call class
 
+    componentDidMount(){                  // React specific - functions called within componentDidMount will run upon the page mounting / starting. Mount is part of the life cycle of React
+        setInterval(() => {               // Use this to set a time interval
+
+          this.setState({                 // We are setting the state every time the interval time is run/reached
+
+            style: {                         
+              height: '50px',
+              width: '50px',
+              backgroundColor: randomHexColor(), 
+            }
+          })
+
+          }, 3000)                        //2000 = 2 seconds
+    }
+
     constructor(props) {                    // Define a constructor, initialises the constructor to create props for this component
     super(props);                         // Calls the constructor of the parent class which is React.Component and applies it to props
       this.state = {                      // this state is an object we can call later on to set our state

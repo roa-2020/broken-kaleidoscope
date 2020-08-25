@@ -37,17 +37,39 @@ class Pixel extends React.Component {
   }
 
   onDouble = (e) => {
-    console.log()
+    console.log('double clicked')
     this.setState({
       style: {
         ...this.state.style,
-        background: 'yellow'()
+        background: 'white',
       },
+    })
+  }
+
+  drag = (e) => {
+    console.log('this aint no 10 second race')
+    this.setState({
+      style: {
+        ...this.state.style,
+        background: 'yellow',
+      },
+    })
+  }
+
+  onContext = (e) => {
+    console.log('right clicked')
+    this.state({
+      style: {
+        ...this.state.style,
+        background: 'black',
+      }
     })
   }
 
   render() {
   return (<div 
+    onContextMenu={this.onContext}
+    onDragEnter={this.drag}
     onDoubleClick={this.onDouble} 
     onMouseEnter={this.onMouse} 
     onClick={this.eventHandler} 

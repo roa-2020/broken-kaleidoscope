@@ -17,13 +17,43 @@ class Pixel extends React.Component {
   }
 
   eventHandler = (e) => {
+    console.log('click')
     this.setState({
-      
+      style: {
+        ...this.state.style,
+        background: randomHexColor()
+      },
+    })
+  }
+
+  onMouse = (e) => {
+    console.log('on MOUSE MOVE')
+    this.setState({
+      style: {
+        ...this.state.style,
+        background: randomHexColor()
+      },
+    })
+  }
+
+  onDouble = (e) => {
+    console.log()
+    this.setState({
+      style: {
+        ...this.state.style,
+        background: 'yellow'()
+      },
     })
   }
 
   render() {
-  return (<div style={this.state.style}>{this.state.greg}</div>);
+  return (<div 
+    onDoubleClick={this.onDouble} 
+    onMouseEnter={this.onMouse} 
+    onClick={this.eventHandler} 
+    style={this.state.style}>
+    {this.state.greg}
+    </div>);
 
   }
 }

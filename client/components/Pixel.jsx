@@ -5,22 +5,92 @@ const randomHexColor = () =>
 
 class Pixel extends React.Component {     // Define as a class component rather than functional component. Allows us to call class
 
-  constructor(props) {                    // Define a constructor, initialises the constructor to create props for this component
+    constructor(props) {                    // Define a constructor, initialises the constructor to create props for this component
     super(props);                         // Calls the constructor of the parent class which is React.Component and applies it to props
       this.state = {                      // this state is an object we can call later on to set our state
-                style: {                  // style is an object within this state we can call
-                height: '50px',
-                width: '50px',
-                backgroundColor: randomHexColor(), // calls the randomHexColor function, we call a function normally by having the parenthesis () afte the function name
-                }
+          style: {                         // style is an object within this state we can call
+                  height: '50px',
+                  width: '50px',
+                  backgroundColor: randomHexColor(), // calls the randomHexColor function, we call a function normally by having the parenthesis () afte the function name
+                  }
       }
     }
+  
+    clickHandler = evt => {       
+      this.setState({
 
-  render() {
-    return (
-        <div style={this.state.style}></div> // We have defined the div style as the state we have defined earlier
-    )
-  }
+        style: {                         
+          height: '50px',
+          width: '50px',
+          backgroundColor: randomHexColor(), 
+        }
+      })
+    }
+
+    greenMouseover = evt => {
+      this.setState({
+
+        style: {                         
+          height: '50px',
+          width: '50px',
+          backgroundColor: 'green', 
+        }
+
+      })
+
+    }
+
+    blackRightclick = evt => {
+
+      evt.preventDefault(); //prevents the default function of right click, ie bringing up the context menu
+
+      this.setState({
+
+        style: {
+          height: '50px',
+          width: '50px',
+          backgroundColor: 'black',
+        }
+      })
+    }
+
+    whiteDoubleclick = evt => {
+
+      this.setState({
+
+        style: {
+          height: '50px',
+          width: '50px',
+          backgroundColor: 'white',
+        }
+      })
+    }
+
+    yellowClickdrag = evt => {
+
+      this.setState({
+
+        style: {
+          height: '50px',
+          width: '50px',
+          backgroundColor: 'yellow',
+        }
+      })
+    }
+  
+    render() {
+      return (
+          <div 
+            style={this.state.style} // We have defined the div style as the state we have set in our constructor earlier
+            onClick={this.clickHandler}  // all subsequent actions will be included in this opening div tag
+            onMouseEnter={this.greenMouseover}
+            onContextMenu={this.blackRightclick}
+            onDoubleClick={this.whiteDoubleclick}
+            onDragEnter={this.yellowClickdrag}
+          >
+          </div> 
+          )
+    }
 
 }
 

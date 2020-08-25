@@ -1,18 +1,15 @@
 import React from 'react'
 
 const randomHexColor = () =>
-    `#${Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, 0)}`
+    `#${Math.floor(Math.random() * 0x1000000)
+        .toString(16)
+        .padStart(6, 0)}`
 
 //array.from() create a new array isntance from a given array
 //array.from(object, mapFunction, thisValue)
 //object = holds the object that will convert into an array
 //mapFunction = optional, used to call on each item of the array
 //thisValue = optional, holds the context to be used while executing mapFunction
-
-const length = 50
-const init = <Pixel />
-const result = Array.from({ length }, () => init)
-console.log(result)
 
 
 
@@ -29,13 +26,9 @@ class Pixel extends React.Component {
         }
     }
 
-    // state = {
-    //     style: {
-    //         height: '50px',
-    //         width: '50px',
-    //         backgroundColor: randomHexColor()
-    //     }
-    // }
+    componentDidMount() {
+        this.changeEveryTwoSeconds()
+    }
 
     clickHandler = evt => {
         this.setState({
@@ -95,8 +88,17 @@ class Pixel extends React.Component {
     //then every two seconds, the randomHexColour() is called
 
     changeEveryTwoSeconds = () => {
-        this.intervalID = setInterval(this.randomHexColor(), 1000)
-
+        // setInterval(this.randomHexColor(), 2000)
+        setInterval(() => {
+            this.setState({
+                // counter: this.state.counter + 1
+                style: {
+                    height: '50px',
+                    width: '50px',
+                    backgroundColor: randomHexColor()
+                }
+            })
+        }, 1000)
     }
 
     render() {
@@ -108,12 +110,11 @@ class Pixel extends React.Component {
                 onDoubleClick={this.turnWhite}
                 onDragEnter={this.turnYellow}>
 
+
             </div>
         )
     }
 }
-
-
 
 // const Pixel = () => {
 //     return (

@@ -3,11 +3,8 @@ import Pixel from './Pixel.jsx'
 
 
 const App = () => {
-  return [
-    <Pixel/>,
-    <Pixel/>,
-    <Pixel/>
-  ]
+  const pixelArr = new Array(3000);
+  return pixelArr.fill(<Pixel/>)
 }
 
 

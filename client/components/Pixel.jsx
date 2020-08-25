@@ -11,8 +11,8 @@ class Pixel extends React.Component {
 
     this.state = {
       style: {
-        height: "3px",
-        width: "3px",
+        height: "20px",
+        width: "20px",
         backgroundColor: randomHexColor(),
       },
     };

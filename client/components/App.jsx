@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Pixel from "./Pixel";
 
 const App = () => {
-  return (
-    <div>React development has begun!</div>
-  )
-}
+  return Array.from({ length: 100 }, (v, i) => <Pixel />);
+};
 
-export default App
+export default App;

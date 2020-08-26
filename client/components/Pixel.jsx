@@ -10,10 +10,12 @@ class Pixel extends React.Component {
     style: {
       height: '50px',
       width: '50px',
+      borderRadius: '50px/50px',
+      marginLeft: '-20px',
+      marginRight: '-20px',
+      opacity: '0.5',
       background: randomHexColor(),
     },
-    greg: "greg",
-  
   }
 
   eventHandler = (e) => {

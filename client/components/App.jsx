@@ -5,7 +5,7 @@ import Pixel from './Pixel'
 const App = () => {
   return (
     <div>
-      {Array(10).fill(0).map(item => <Pixel />)}
+      {Array(20).fill(0).map(item => <Pixel />)}
     </div>
   )
 }

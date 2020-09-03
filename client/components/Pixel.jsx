@@ -29,7 +29,7 @@ class Pixel extends React.Component {
         x: this.state.x + this.state.xSpeed,
         y: this.state.y + this.state.ySpeed,
       });
-      if (Math.random() < 0.1) {
+      if (Math.random() < 2.0) {
         this.setState({
           xSpeed: Math.floor(Math.random() * 100) - 50,
           ySpeed: Math.floor(Math.random() * 100) - 50,

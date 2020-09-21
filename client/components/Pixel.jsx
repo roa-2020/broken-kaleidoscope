@@ -18,7 +18,7 @@ class Pixel extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(this.changeColor, 10000);
+    setInterval(this.changeColor, 1);
   }
 
   changeColor = () => {

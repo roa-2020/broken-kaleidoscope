@@ -9,9 +9,9 @@ const Pixel = () => {
                                       width: '20px', 
                                       backgroundColor: randomHexColor() 
                                     })
-
-   const clickHandler = evt => {
-      setStyle( {
+                                    
+  const clickHandler = evt => {
+    setStyle( {
       ...style,
       backgroundColor: randomHexColor()
     })

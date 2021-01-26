@@ -46,7 +46,7 @@ const Pixel = () => {
     )
   }
   
-  return <div onClick= {clickHandler} 
+  return <div data-testid='pixel' onClick= {clickHandler} 
     onMouseEnter = {mouseHandler}
     onContextMenu = {contextHandler}
     onDoubleClick = {doubleClickHandler}
